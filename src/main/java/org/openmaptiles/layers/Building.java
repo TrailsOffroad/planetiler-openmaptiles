@@ -160,7 +160,7 @@ public class Building implements
 
     if (renderHeight < 3660 && renderMinHeight < 3660) {
       var feature = features.polygon(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
-        .setMinZoom(13)
+        .setMinZoom(14)
         .setMinPixelSize(2)
         .setAttrWithMinzoom(Fields.RENDER_HEIGHT, renderHeight, 14)
         .setAttrWithMinzoom(Fields.RENDER_MIN_HEIGHT, renderMinHeight, 14)
@@ -178,7 +178,7 @@ public class Building implements
   @Override
   public List<VectorTile.Feature> postProcess(int zoom,
     List<VectorTile.Feature> items) throws GeometryException {
-    return (mergeZ13Buildings && zoom == 13) ?
+    return (mergeZ13Buildings && zoom == 14) ?
       FeatureMerge.mergeNearbyPolygons(items, 4, 4, 0.5, 0.5) :
       // reduces the size of some heavy z14 tiles with many small buildings by 60% or more
       FeatureMerge.mergeMultiPolygon(items);

@@ -195,11 +195,11 @@ public class Transportation implements
       false
     );
     MINZOOMS = Map.ofEntries(
-      entry(FieldValues.CLASS_PATH, z13Paths ? 13 : 14),
-      entry(FieldValues.CLASS_TRACK, 14),
-      entry(FieldValues.CLASS_SERVICE, 13),
-      entry(FieldValues.CLASS_MINOR, 13),
-      entry(FieldValues.CLASS_RACEWAY, 12),
+      entry(FieldValues.CLASS_PATH, z13Paths ? 12 : 13),
+      entry(FieldValues.CLASS_TRACK, 11),
+      entry(FieldValues.CLASS_SERVICE, 11),
+      entry(FieldValues.CLASS_MINOR, 11),
+      entry(FieldValues.CLASS_RACEWAY, 11),
       entry(FieldValues.CLASS_TERTIARY, 11),
       entry(FieldValues.CLASS_BUSWAY, 11),
       entry(FieldValues.CLASS_BUS_GUIDEWAY, 11),
@@ -548,7 +548,7 @@ public class Transportation implements
       minzoom = switch (baseClass) {
         case FieldValues.CLASS_SERVICE -> isDrivewayOrParkingAisle(service(element.service())) ? 14 : 13;
         case FieldValues.CLASS_TRACK, FieldValues.CLASS_PATH -> routeRank == 1 ? 12 :
-          (z13Paths || !nullOrEmpty(element.name()) || routeRank <= 2 || !nullOrEmpty(element.sacScale())) ? 13 : 14;
+          (z13Paths || !nullOrEmpty(element.name()) || routeRank <= 2 || !nullOrEmpty(element.sacScale())) ? 12 : 13;
         case FieldValues.CLASS_TRUNK -> {
           boolean z5trunk = isTrunkForZ5(highway, routeRelations);
           // and if it is good for Z5, it may be good also for Z4 (see CLASS_MOTORWAY bellow):

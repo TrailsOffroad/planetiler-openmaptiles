@@ -137,7 +137,7 @@ public class Housenumber implements
       .setAttr(Fields.HOUSENUMBER, housenumber)
       .setAttr(TEMP_PARTITION, partition)
       .setAttr(TEMP_HAS_NAME, hasName)
-      .setMinZoom(14);
+      .setMinZoom(16);
   }
 
   @Override

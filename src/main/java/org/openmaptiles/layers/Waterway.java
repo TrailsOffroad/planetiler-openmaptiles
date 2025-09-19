@@ -88,12 +88,12 @@ public class Waterway implements
    */
 
   private static final Map<String, Integer> CLASS_MINZOOM = Map.of(
-    "river", 12,
-    "canal", 12,
+    "river", 11,
+    "canal", 11,
 
-    "stream", 13,
-    "drain", 13,
-    "ditch", 13
+    "stream", 12,
+    "drain", 12,
+    "ditch", 12
   );
   private static final String TEMP_REL_ID_ADDR = "_relid";
 

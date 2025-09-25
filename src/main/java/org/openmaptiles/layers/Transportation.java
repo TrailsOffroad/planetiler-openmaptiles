@@ -291,7 +291,8 @@ public class Transportation implements
   }
 
   private static boolean isDrivewayOrParkingAisle(String service) {
-    return FieldValues.SERVICE_PARKING_AISLE.equals(service) || FieldValues.SERVICE_DRIVEWAY.equals(service);
+    return FieldValues.SERVICE_PARKING_AISLE.equals(service) || FieldValues.SERVICE_DRIVEWAY.equals(service) ||
+        FieldValues.SERVICE_ALLEY.equals(service);
   }
 
   private static boolean isBridgeOrPier(String manMade) {
@@ -542,7 +543,7 @@ public class Transportation implements
     if ("pier".equals(element.manMade())) {
       minzoom = 13;
     } else if (isResidentialOrUnclassified(highway)) {
-      minzoom = 12;
+      minzoom = 11;
     } else {
       String baseClass = highwayClass.replace("_construction", "");
       minzoom = switch (baseClass) {
@@ -630,7 +631,7 @@ public class Transportation implements
       .setAttr(Fields.LAYER, nullIfLong(element.layer(), 0))
       .setSortKey(element.zOrder())
       .setMinPixelSize(0) // merge during post-processing, then limit by size
-      .setMinZoom(12);
+      .setMinZoom(13);
   }
 
   @Override

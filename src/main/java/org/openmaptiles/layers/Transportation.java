@@ -546,7 +546,7 @@ public class Transportation implements
     } else {
       String baseClass = highwayClass.replace("_construction", "");
       minzoom = switch (baseClass) {
-        case FieldValues.CLASS_SERVICE -> isDrivewayOrParkingAisle(service(element.service())) ? 13 : 12;
+        case FieldValues.CLASS_SERVICE -> isDrivewayOrParkingAisle(service(element.service())) ? 12 : 11;
         case FieldValues.CLASS_TRACK, FieldValues.CLASS_PATH -> routeRank == 1 ? 11 :
           (z13Paths || !nullOrEmpty(element.name()) || routeRank <= 2 || !nullOrEmpty(element.sacScale())) ? 11 : 12;
         case FieldValues.CLASS_TRUNK -> {

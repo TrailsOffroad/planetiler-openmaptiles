@@ -548,8 +548,7 @@ public class Transportation implements
       String baseClass = highwayClass.replace("_construction", "");
       minzoom = switch (baseClass) {
         case FieldValues.CLASS_SERVICE -> isDrivewayOrParkingAisle(service(element.service())) ? 12 : 11;
-        case FieldValues.CLASS_TRACK, FieldValues.CLASS_PATH -> routeRank == 1 ? 11 :
-          (z13Paths || !nullOrEmpty(element.name()) || routeRank <= 2 || !nullOrEmpty(element.sacScale())) ? 11 : 12;
+        case FieldValues.CLASS_TRACK, FieldValues.CLASS_PATH -> 11;
         case FieldValues.CLASS_TRUNK -> {
           boolean z5trunk = isTrunkForZ5(highway, routeRelations);
           // and if it is good for Z5, it may be good also for Z4 (see CLASS_MOTORWAY bellow):

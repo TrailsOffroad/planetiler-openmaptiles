@@ -311,7 +311,7 @@ public class Poi implements
       minzoom = 10;
     }
 
-    if (Set.of("christian", "cemetary", "grave_yard", "school", "bus", "office").contains(rawSubclass)) {
+    if (Set.of("christian", "school", "bus", "office").contains(subclass)) {
       return;
     }
 

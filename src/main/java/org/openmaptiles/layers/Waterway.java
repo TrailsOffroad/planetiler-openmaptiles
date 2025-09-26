@@ -88,8 +88,8 @@ public class Waterway implements
    */
 
   private static final Map<String, Integer> CLASS_MINZOOM = Map.of(
-    "river", 11,
-    "canal", 11,
+    "river", 10,
+    "canal", 10,
 
     "stream", 12,
     "drain", 12,

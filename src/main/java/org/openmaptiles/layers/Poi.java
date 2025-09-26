@@ -101,6 +101,7 @@ public class Poi implements
     entry("zoo", 95),
     entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
+    entry(FieldValues.CLASS_CEMETERY, 115),
     entry(FieldValues.CLASS_FUEL, 115),
     entry(FieldValues.CLASS_PARK, 120),
     entry(FieldValues.CLASS_LIBRARY, 130),

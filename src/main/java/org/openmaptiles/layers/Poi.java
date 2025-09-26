@@ -312,7 +312,7 @@ public class Poi implements
     }
 
     if (Set.of("christian", "school", "bus", "office").contains(subclass)) {
-      return;
+      minzoom = 99; // effectively disable
     }
 
     output.setBufferPixels(BUFFER_SIZE)

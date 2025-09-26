@@ -101,7 +101,7 @@ public class Poi implements
     entry("zoo", 95),
     entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
-    entry(FieldValues.CLASS_CEMETERY, 115),
+    entry(FieldValues.CLASS_FUEL, 115),
     entry(FieldValues.CLASS_PARK, 120),
     entry(FieldValues.CLASS_LIBRARY, 130),
     entry("police", 135),
@@ -309,6 +309,10 @@ public class Poi implements
       // universities that are at least 10% of a tile may appear from Z10
       output.setMinPixelSizeBelowZoom(13, 80); // 80x80px is ~10% of a 256x256px tile
       minzoom = 10;
+    }
+
+    if (Set.of("christian", "cemetary", "grave_yard", "school", "bus", "office").contains(rawSubclass)) {
+      return;
     }
 
     output.setBufferPixels(BUFFER_SIZE)

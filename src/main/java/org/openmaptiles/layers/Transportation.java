@@ -295,6 +295,16 @@ public class Transportation implements
         FieldValues.SERVICE_ALLEY.equals(service);
   }
 
+  private static int isDrivewayParkingAisleAlleyOrOther(String service) {
+    if (FieldValues.SERVICE_PARKING_AISLE.equals(service) || FieldValues.SERVICE_DRIVEWAY.equals(service)) {
+      return 99; // to be filtered out
+    } else if (FieldValues.SERVICE_ALLEY.equals(service)) {
+      return 14;
+    } else {
+      return 11;
+    }
+  }
+
   private static boolean isBridgeOrPier(String manMade) {
     return "bridge".equals(manMade) || "pier".equals(manMade);
   }
@@ -545,7 +555,7 @@ public class Transportation implements
     } else {
       String baseClass = highwayClass.replace("_construction", "");
       minzoom = switch (baseClass) {
-        case FieldValues.CLASS_SERVICE -> isDrivewayOrParkingAisle(service(element.service())) ? 12 : 11;
+        case FieldValues.CLASS_SERVICE -> isDrivewayParkingAisleAlleyOrOther(service(element.service()));
         case FieldValues.CLASS_TRACK, FieldValues.CLASS_PATH -> 11;
         case FieldValues.CLASS_TRUNK -> {
           boolean z5trunk = isTrunkForZ5(highway, routeRelations);

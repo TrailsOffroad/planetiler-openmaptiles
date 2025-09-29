@@ -189,7 +189,7 @@ public class Waterway implements
     String waterway = element.waterway();
     String name = nullIfEmpty(element.name());
     boolean important = "river".equals(waterway) && name != null;
-    int minzoom = important ? 9 : CLASS_MINZOOM.getOrDefault(element.waterway(), 14);
+    int minzoom = important ? 9 : CLASS_MINZOOM.getOrDefault(element.waterway(), 13);
     features.line(LAYER_NAME)
       .setBufferPixels(BUFFER_SIZE)
       .setAttr(Fields.CLASS, element.waterway())

@@ -348,7 +348,7 @@ public class Place implements
       rank != null && rank <= 8 ? Math.max(3, rank - 1) :
       placeType.ordinal() <= PlaceType.TOWN.ordinal() ? 7 :
       placeType.ordinal() <= PlaceType.VILLAGE.ordinal() ? 8 :
-      placeType.ordinal() <= PlaceType.SUBURB.ordinal() ? 11 : 14;
+      placeType.ordinal() <= PlaceType.SUBURB.ordinal() ? 11 : 13;
 
     var feature = features.point(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
       .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))

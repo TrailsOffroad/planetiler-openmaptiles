@@ -350,7 +350,7 @@ public class TransportationName implements
     // z8: (tolerance: 120)
     // z9-11: (tolerance: 50)
     Function<Map<String, Object>, Double> lengthLimitCalculator =
-      zoom >= 14 ? (p -> 0d) :
+      zoom >= 13 ? (p -> 0d) :
         minLength > 0 ? (p -> minLength) :
         this::getMinLengthForName;
     var result = FeatureMerge.mergeLineStrings(items, lengthLimitCalculator, tolerance, BUFFER_SIZE);

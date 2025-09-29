@@ -299,7 +299,7 @@ public class Transportation implements
     if (FieldValues.SERVICE_PARKING_AISLE.equals(service) || FieldValues.SERVICE_DRIVEWAY.equals(service)) {
       return 99; // to be filtered out
     } else if (FieldValues.SERVICE_ALLEY.equals(service)) {
-      return 14;
+      return 13;
     } else {
       return 11;
     }
@@ -603,7 +603,7 @@ public class Transportation implements
       String service = nullIfEmpty(element.service());
       int minzoom;
       if (service != null) {
-        minzoom = 14;
+        minzoom = 13;
       } else if (FieldValues.SUBCLASS_RAIL.equals(railway)) {
         minzoom = "main".equals(element.usage()) ? 8 : 10;
       } else if (FieldValues.SUBCLASS_NARROW_GAUGE.equals(railway)) {
@@ -611,7 +611,7 @@ public class Transportation implements
       } else if (FieldValues.SUBCLASS_LIGHT_RAIL.equals(railway)) {
         minzoom = 11;
       } else {
-        minzoom = 14;
+        minzoom = 13;
       }
       features.line(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
         .setAttr(Fields.CLASS, clazz)

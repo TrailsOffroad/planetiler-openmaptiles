@@ -242,7 +242,7 @@ public class WaterName implements
       if (centerlineGeometry == null || minzoom < minzoomCL) {
         // use a label point inside the lake but ...
         // ... if centerline already created, adjust maxzoom here to make sure we're not having both at same zoom level
-        int maxzoom = centerlineGeometry != null ? minzoomCL - 1 : 14;
+        int maxzoom = centerlineGeometry != null ? minzoomCL - 1 : 13;
         setupOsmWaterPolygonFeature(element, features.pointOnSurface(LAYER_NAME), clazz, minzoom)
           .setMaxZoom(maxzoom)
           // Show a label if a water feature covers at least 1/4 of a tile or z14+

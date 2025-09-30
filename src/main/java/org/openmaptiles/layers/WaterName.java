@@ -235,18 +235,18 @@ public class WaterName implements
         // minzoom and Z8 and for Z9+ centerline is used, while OpenMaptiles sticks with points.
         setupOsmWaterPolygonFeature(
           element, features.geometry(LAYER_NAME, centerlineGeometry), clazz, minzoomCL)
-            .setMinPixelSizeBelowZoom(13, 6d * element.name().length());
+            .setMinPixelSizeBelowZoom(12, 6d * element.name().length());
       }
 
       int minzoom = place != null && SEA_OR_OCEAN_PLACE.contains(place) ? MINZOOM_SEA_AND_OCEAN : MINZOOM_LAKE;
       if (centerlineGeometry == null || minzoom < minzoomCL) {
         // use a label point inside the lake but ...
         // ... if centerline already created, adjust maxzoom here to make sure we're not having both at same zoom level
-        int maxzoom = centerlineGeometry != null ? minzoomCL - 1 : 13;
+        int maxzoom = centerlineGeometry != null ? minzoomCL - 1 : 12;
         setupOsmWaterPolygonFeature(element, features.pointOnSurface(LAYER_NAME), clazz, minzoom)
           .setMaxZoom(maxzoom)
           // Show a label if a water feature covers at least 1/4 of a tile or z14+
-          .setMinPixelSizeBelowZoom(13, 128);
+          .setMinPixelSizeBelowZoom(12, 128);
       }
     }
   }

@@ -576,6 +576,11 @@ public class Transportation implements
     if (isLink(highway) || isLink(construction)) {
       minzoom = Math.max(minzoom, 9);
     }
+
+    if (element.access() != null && ACCESS_NO_VALUES.contains(element.access())) {
+      minzoom = 99; // to be filtered out
+    }
+
     return minzoom;
   }
 

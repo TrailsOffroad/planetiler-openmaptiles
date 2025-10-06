@@ -178,7 +178,7 @@ public class Building implements
   @Override
   public List<VectorTile.Feature> postProcess(int zoom,
     List<VectorTile.Feature> items) throws GeometryException {
-    return (mergeZ13Buildings && zoom == 13) ?
+    return (mergeZ13Buildings && zoom == 14) ?
       FeatureMerge.mergeNearbyPolygons(items, 4, 4, 0.5, 0.5) :
       // reduces the size of some heavy z14 tiles with many small buildings by 60% or more
       FeatureMerge.mergeMultiPolygon(items);

@@ -17,7 +17,7 @@ Or to build from source, after [installing Java 21+](https://adoptium.net/instal
 # Build the project (use mvnw.cmd on windows):
 ./mvnw clean package
 # Then run:
-java -jar target/*with-deps.jar --force --download --area=monaco
+java -jar target/*with-deps.jar --force --download --area=colorado
 ```
 
 See [Planetiler README.md](https://github.com/onthegomap/planetiler/blob/main/README.md) for more description of the

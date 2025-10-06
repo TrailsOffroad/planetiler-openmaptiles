@@ -102,6 +102,7 @@ public class Poi implements
     entry(FieldValues.CLASS_TOWN_HALL, 100),
     entry(FieldValues.CLASS_CAMPSITE, 110),
     entry(FieldValues.CLASS_CEMETERY, 115),
+    entry(FieldValues.CLASS_FUEL, 115),
     entry(FieldValues.CLASS_PARK, 120),
     entry(FieldValues.CLASS_LIBRARY, 130),
     entry("police", 135),
@@ -154,7 +155,7 @@ public class Poi implements
   private int minzoom(String subclass, String mappingKey) {
     boolean lowZoom = ("station".equals(subclass) && "railway".equals(mappingKey)) ||
       "halt".equals(subclass) || "ferry_terminal".equals(subclass);
-    return lowZoom ? 12 : 14;
+    return lowZoom ? 12 : 13;
   }
 
   @Override
@@ -309,6 +310,13 @@ public class Poi implements
       // universities that are at least 10% of a tile may appear from Z10
       output.setMinPixelSizeBelowZoom(13, 80); // 80x80px is ~10% of a 256x256px tile
       minzoom = 10;
+    }
+
+    if (subclass != null && Set.of("christian", "school", "bus", "office", "florist", "garden_centre", "bus_stop", "jewelry").contains(subclass)) {
+      minzoom = 99; // effectively disable
+    }
+    if (poiClass != null && Set.of("fuel").contains(poiClass)) {
+      minzoom = 13;  // important
     }
 
     output.setBufferPixels(BUFFER_SIZE)

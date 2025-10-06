@@ -16,6 +16,3 @@ echo "Building..."
 
 echo "Running..."
 java -cp target/*-with-deps.jar org.openmaptiles.Generate -tag="${TAG}" -base-url="${BASE_URL}"
-
-echo "Formatting..."
-./scripts/format.sh

@@ -312,11 +312,14 @@ public class Poi implements
       minzoom = 11;
     }
 
-    if (subclass != null && Set.of("christian", "school", "bus", "station", "office", "florist", "garden_centre", "bus_stop", "jewelry").contains(subclass)) {
+    if (subclass != null && Set.of(
+        "christian", "school", "bus", "station", "halt", "tram_stop", "subway", "office", "florist",
+        "garden_centre", "bus_stop", "jewelry"
+    ).contains(subclass)) {
       minzoom = 99; // effectively disable
     }
     if (subclass != null && Set.of(
-        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft",  "battle_field", "memorial",
+        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field", "memorial",
         "memorial", "monument", "stone", "tomb", "wreck"
     ).contains(subclass)) {
       minzoom = 11;  // important

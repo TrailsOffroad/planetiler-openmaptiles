@@ -319,13 +319,16 @@ public class Poi implements
       minzoom = 99; // effectively disable
     }
     if (subclass != null && Set.of(
-        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field", "memorial",
+        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field",
         "memorial", "monument", "stone", "tomb", "wreck"
     ).contains(subclass)) {
       minzoom = 11;  // important
     }
     if (poiClass != null && Set.of("fuel").contains(poiClass)) {
       minzoom = 12;  // important
+    }
+    if (element.indoor()) {
+      minzoom = 99; // effectively disable
     }
 
     output.setBufferPixels(BUFFER_SIZE)

@@ -312,6 +312,11 @@ public class Poi implements
       minzoom = 11;
     }
 
+    if (poiClass != null && Set.of(
+        "station", "parking", "cemetery"
+    ).contains(poiClass)) {
+      minzoom = 99; // effectively disable
+    }
     if (subclass != null && Set.of(
         "christian", "school", "bus", "station", "halt", "tram_stop", "subway", "office", "florist",
         "garden_centre", "bus_stop", "jewelry"

@@ -309,14 +309,20 @@ public class Poi implements
     if (UNIVERSITY_POI_SUBCLASSES.contains(rawSubclass)) {
       // universities that are at least 10% of a tile may appear from Z10
       output.setMinPixelSizeBelowZoom(13, 80); // 80x80px is ~10% of a 256x256px tile
-      minzoom = 10;
+      minzoom = 11;
     }
 
-    if (subclass != null && Set.of("christian", "school", "bus", "office", "florist", "garden_centre", "bus_stop", "jewelry").contains(subclass)) {
+    if (subclass != null && Set.of("christian", "school", "bus", "station", "office", "florist", "garden_centre", "bus_stop", "jewelry").contains(subclass)) {
       minzoom = 99; // effectively disable
     }
+    if (subclass != null && Set.of(
+        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft",  "battle_field", "memorial",
+        "memorial", "monument", "stone", "tomb", "wreck"
+    ).contains(subclass)) {
+      minzoom = 11;  // important
+    }
     if (poiClass != null && Set.of("fuel").contains(poiClass)) {
-      minzoom = 13;  // important
+      minzoom = 12;  // important
     }
 
     output.setBufferPixels(BUFFER_SIZE)

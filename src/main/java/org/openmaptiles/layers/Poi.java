@@ -312,25 +312,35 @@ public class Poi implements
       minzoom = 11;
     }
 
-    if (poiClass != null && Set.of(
-        "station", "parking", "cemetery"
-    ).contains(poiClass)) {
-      minzoom = 99; // effectively disable
+    if (poiClass != null) {
+      if (Set.of(
+          "station", "parking", "cemetery", "information"
+      ).contains(poiClass)) {
+        minzoom = 99; // effectively disable
+      }
+      if (Set.of("fuel").contains(poiClass)) {
+        minzoom = 12;  // important
+      }
     }
-    if (subclass != null && Set.of(
-        "christian", "school", "bus", "station", "halt", "tram_stop", "subway", "office", "florist",
-        "garden_centre", "bus_stop", "jewelry"
-    ).contains(subclass)) {
-      minzoom = 99; // effectively disable
-    }
-    if (subclass != null && Set.of(
-        "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field",
-        "memorial", "monument", "stone", "tomb", "wreck"
-    ).contains(subclass)) {
-      minzoom = 11;  // important
-    }
-    if (poiClass != null && Set.of("fuel").contains(poiClass)) {
-      minzoom = 12;  // important
+    if (subclass != null) {
+      if (Set.of(
+          "christian", "school", "bus", "station", "halt", "tram_stop", "subway", "office", "florist",
+          "garden_centre", "bus_stop", "jewelry"
+      ).contains(subclass)) {
+        minzoom = 99; // effectively disable
+      }
+      if (Set.of(
+          "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field",
+          "memorial", "monument", "stone", "tomb", "wreck"
+      ).contains(subclass)) {
+        minzoom = 11;  // important
+      }
+      if (Set.of("drinking_water", "waterfall").contains(subclass)) {
+        minzoom = 12;  // important
+      }
+      if (Set.of("toilets").contains(subclass)) {
+        minzoom = 13;  // important
+      }
     }
     if (element.indoor()) {
       minzoom = 99; // effectively disable

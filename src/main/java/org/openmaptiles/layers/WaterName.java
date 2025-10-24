@@ -201,7 +201,7 @@ public class WaterName implements
       } else if (rank != null) {
         minZoom = rank;
       } else if ("bay".equals(element.natural())) {
-        minZoom = 13;
+        minZoom = 12;
       } else {
         minZoom = 8;
       }

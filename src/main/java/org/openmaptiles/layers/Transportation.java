@@ -299,7 +299,7 @@ public class Transportation implements
     if (FieldValues.SERVICE_PARKING_AISLE.equals(service) || FieldValues.SERVICE_DRIVEWAY.equals(service)) {
       return 99; // to be filtered out
     } else if (FieldValues.SERVICE_ALLEY.equals(service)) {
-      return 13;
+      return 12;
     } else {
       return 11;
     }
@@ -551,7 +551,7 @@ public class Transportation implements
 
     int minzoom;
     if ("pier".equals(element.manMade())) {
-      minzoom = 13;
+      minzoom = 12;
     } else {
       String baseClass = highwayClass.replace("_construction", "");
       minzoom = switch (baseClass) {
@@ -608,7 +608,7 @@ public class Transportation implements
       String service = nullIfEmpty(element.service());
       int minzoom;
       if (service != null) {
-        minzoom = 13;
+        minzoom = 12;
       } else if (FieldValues.SUBCLASS_RAIL.equals(railway)) {
         minzoom = "main".equals(element.usage()) ? 8 : 10;
       } else if (FieldValues.SUBCLASS_NARROW_GAUGE.equals(railway)) {
@@ -616,7 +616,7 @@ public class Transportation implements
       } else if (FieldValues.SUBCLASS_LIGHT_RAIL.equals(railway)) {
         minzoom = 11;
       } else {
-        minzoom = 13;
+        minzoom = 12;
       }
       features.line(LAYER_NAME).setBufferPixels(BUFFER_SIZE)
         .setAttr(Fields.CLASS, clazz)
@@ -643,7 +643,7 @@ public class Transportation implements
       .setAttr(Fields.LAYER, nullIfLong(element.layer(), 0))
       .setSortKey(element.zOrder())
       .setMinPixelSize(0) // merge during post-processing, then limit by size
-      .setMinZoom(13);
+      .setMinZoom(12);
   }
 
   @Override
@@ -676,7 +676,7 @@ public class Transportation implements
           .setAttr(Fields.BRUNNEL, brunnel("bridge".equals(manMade), false, false))
           .setAttr(Fields.LAYER, nullIfLong(element.layer(), 0))
           .setSortKey(element.zOrder())
-          .setMinZoom(13);
+          .setMinZoom(12);
       }
     }
   }

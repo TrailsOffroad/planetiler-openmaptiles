@@ -137,12 +137,12 @@ public class Landcover implements
 
   @Override
   public List<VectorTile.Feature> postProcess(int zoom, List<VectorTile.Feature> items) throws GeometryException {
-    if (zoom < 7 || zoom > 13) {
+    if (zoom < 7 || zoom > 12) {
       for (var item : items) {
         item.tags().remove(TEMP_NUM_POINTS_ATTR);
       }
       return items;
-    } else { // z7-13
+    } else { // z7-12
       // merging only merges polygons with the same attributes, so use this temporary key
       // to separate features into layers that will be merged separately
       String tempGroupKey = "_group";

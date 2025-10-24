@@ -149,7 +149,7 @@ public class MountainPeak implements
       .setAttr(Fields.RANK, rank)
       .putAttrs(OmtLanguageUtils.getNames(element.source().tags(), translations))
       .setSortKey(rank)
-      .setMinZoom(13)
+      .setMinZoom(12)
       .setBufferPixels(100);
   }
 

@@ -155,7 +155,7 @@ public class Poi implements
   private int minzoom(String subclass, String mappingKey) {
     boolean lowZoom = ("station".equals(subclass) && "railway".equals(mappingKey)) ||
       "halt".equals(subclass) || "ferry_terminal".equals(subclass);
-    return lowZoom ? 12 : 13;
+    return lowZoom ? 12 : 12;
   }
 
   @Override
@@ -339,7 +339,7 @@ public class Poi implements
         minzoom = 12;  // important
       }
       if (Set.of("toilets").contains(subclass)) {
-        minzoom = 13;  // important
+        minzoom = 12;  // important
       }
     }
     if (element.indoor()) {

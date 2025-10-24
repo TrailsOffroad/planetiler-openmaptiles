@@ -314,7 +314,9 @@ public class Poi implements
 
     if (poiClass != null) {
       if (Set.of(
-          "station", "parking", "cemetery", "information"
+          "station", "parking", "cemetery", "information", "shop", "post", "fast_food", "restaurant", "office",
+          "clothing_store", "bakery", "alcohol_shop", "stadium", "town_hall", "yoga", "atm", "art_gallery", "theatre",
+          "bar", "beer", "hackerspace", "waste_basket"
       ).contains(poiClass)) {
         minzoom = 99; // effectively disable
       }
@@ -325,7 +327,7 @@ public class Poi implements
     if (subclass != null) {
       if (Set.of(
           "christian", "school", "bus", "station", "halt", "tram_stop", "subway", "office", "florist",
-          "garden_centre", "bus_stop", "jewelry"
+          "garden_centre", "bus_stop", "jewelry", "department_store"
       ).contains(subclass)) {
         minzoom = 99; // effectively disable
       }

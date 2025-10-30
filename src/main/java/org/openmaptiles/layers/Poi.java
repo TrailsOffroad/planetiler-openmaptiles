@@ -332,12 +332,8 @@ public class Poi implements
         minzoom = 99; // effectively disable
       }
       if (Set.of(
-          "shower", "water_point", "drinking_water", "archaeological_site", "aircraft", "battle_field",
-          "memorial", "monument", "stone", "tomb", "wreck"
+          "archaeological_site", "aircraft", "battle_field", "memorial", "monument", "stone", "tomb", "wreck"
       ).contains(subclass)) {
-        minzoom = 11;  // important
-      }
-      if (Set.of("drinking_water", "waterfall").contains(subclass)) {
         minzoom = 12;  // important
       }
       if (Set.of("toilets").contains(subclass)) {

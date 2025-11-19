@@ -468,18 +468,10 @@ public class OpenMapTilesSchema {
        * allowed values:
        * <ul>
        * <li>"valley"
-       * <li>"stone"
-       * <li>"rock"
-       * <li>"sinkhole"
-       * <li>"cone"
-       * <li>"tor"
-       * <li>"monocline"
-       * <li>"dyke"
+       * <li>"saddle"
+       * <li>"cliff"
+       * <li>"ridge"
        * <li>"meteor_crater"
-       * <li>"glacial_erratic"
-       * <li>"volcanic_vent"
-       * <li>"volcanic_lava_field"
-       * <li>"volcanic_caldera_rim"
        * </ul>
        */
       public static final String CLASS = "class";
@@ -489,19 +481,11 @@ public class OpenMapTilesSchema {
     /** Attribute values for map elements in the land_feature layer. */
     final class FieldValues {
       public static final String CLASS_VALLEY = "valley";
-        public static final String CLASS_STONE = "stone";
-        public static final String CLASS_ROCK = "rock";
-        public static final String CLASS_SINKHOLE = "sinkhole";
-        public static final String CLASS_CONE = "cone";
-        public static final String CLASS_TOR = "tor";
-        public static final String CLASS_MONOCLINE = "monocline";
-        public static final String CLASS_DYKE = "dyke";
+        public static final String CLASS_SADDLE = "saddle";
+        public static final String CLASS_CLIFF = "cliff";
+        public static final String CLASS_RIDGE = "ridge";
         public static final String CLASS_METEOR_CRATER = "meteor_crater";
-        public static final String CLASS_GLACIAL_ERRATIC = "glacial_erratic";
-        public static final String CLASS_VOLCANIC_VENT = "volcanic_vent";
-        public static final String CLASS_VOLCANIC_LAVA_FIELD = "volcanic_lava_field";
-        public static final String CLASS_VOLCANIC_CALDERA_RIM = "volcanic_caldera_rim";
-      public static final Set<String> CLASS_VALUES = Set.of("valley", "stone", "rock", "sinkhole", "cone", "tor", "monocline", "dyke", "meteor_crater", "glacial_erratic", "volcanic_vent", "volcanic_lava_field", "volcanic_caldera_rim");
+      public static final Set<String> CLASS_VALUES = Set.of("valley", "saddle", "cliff", "ridge", "meteor_crater");
     }
     /** Complex mappings to generate attribute values from OSM element tags in the land_feature layer. */
     final class FieldMappings {

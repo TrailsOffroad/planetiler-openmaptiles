@@ -201,7 +201,7 @@ public class WaterName implements
       } else if (rank != null) {
         minZoom = rank;
       } else if ("bay".equals(element.natural())) {
-        minZoom = 13;
+        minZoom = 12;
       } else {
         minZoom = 8;
       }
@@ -235,7 +235,7 @@ public class WaterName implements
         // minzoom and Z8 and for Z9+ centerline is used, while OpenMaptiles sticks with points.
         setupOsmWaterPolygonFeature(
           element, features.geometry(LAYER_NAME, centerlineGeometry), clazz, minzoomCL)
-            .setMinPixelSizeBelowZoom(12, 6d * element.name().length());
+            .setMinPixelSizeBelowZoom(11, 6d * element.name().length());
       }
 
       int minzoom = place != null && SEA_OR_OCEAN_PLACE.contains(place) ? MINZOOM_SEA_AND_OCEAN : MINZOOM_LAKE;
@@ -246,7 +246,7 @@ public class WaterName implements
         setupOsmWaterPolygonFeature(element, features.pointOnSurface(LAYER_NAME), clazz, minzoom)
           .setMaxZoom(maxzoom)
           // Show a label if a water feature covers at least 1/4 of a tile or z14+
-          .setMinPixelSizeBelowZoom(12, 128);
+          .setMinPixelSizeBelowZoom(11, 80);
       }
     }
   }

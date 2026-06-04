@@ -112,6 +112,8 @@ public class Park implements
       return "recreation_ground";
     } else if (element.historic() != null && !element.historic().isEmpty()) {
       return "historic";
+    } else if ("aboriginal_lands".equals(element.boundary())) {
+      return "aboriginal_lands";
     } else {
       return "nature_reserve";
     }
